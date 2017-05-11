@@ -33,15 +33,14 @@
         voipRegistry.delegate = self;
         // Set the push type to VoIP
         voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
-        
+
         self.callbackId = command.callbackId;
-        
+
         // if push token available call the token callback
         NSData *token = [voipRegistry pushTokenForType:PKPushTypeVoIP];
         if (token != nil) {
             NSMutableDictionary* pushMessage = [NSMutableDictionary dictionaryWithCapacity:2];
             [pushMessage setObject:token forKey:@"token"];
-            [pushMessage setObject:credentials.type forKey:@"type"];
 
             CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:pushMessage];
             [pluginResult setKeepCallbackAsBool:YES];
