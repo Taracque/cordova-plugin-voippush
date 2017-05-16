@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-voippush",
+  "version": "0.0.2",
+  "description": "PushKit plugin for Cordova apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinceOPS/cordova-plugin-voippush.git"
+  },
+  "keywords": [
+    "cordova",
+    "ionic",
+    "pushkit"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinceOPS/cordova-plugin-voippush/issues"
+  },
+  "homepage": "https://github.com/VinceOPS/cordova-plugin-voippush#readme"
+}
