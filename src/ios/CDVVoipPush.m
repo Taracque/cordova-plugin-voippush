@@ -41,7 +41,7 @@
         if (token != nil) {
             NSMutableDictionary* pushMessage = [NSMutableDictionary dictionaryWithCapacity:2];
             [pushMessage setObject:token forKey:@"token"];
-            [pushMessage setObject:credentials.type forKey:@"type"];
+            [pushMessage setObject:PKPushTypeVoIP forKey:@"type"];
 
             CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:pushMessage];
             [pluginResult setKeepCallbackAsBool:YES];
