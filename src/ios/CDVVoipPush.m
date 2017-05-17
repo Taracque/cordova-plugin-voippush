@@ -33,9 +33,9 @@
         voipRegistry.delegate = self;
         // Set the push type to VoIP
         voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
-        
+
         self.callbackId = command.callbackId;
-        
+
         // if push token available call the token callback
         NSData *token = [voipRegistry pushTokenForType:PKPushTypeVoIP];
         if (token != nil) {

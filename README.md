@@ -1,25 +1,40 @@
+# cordova-plugin-voippush
 
-# Install
+Ionic/Cordova plugin for Apple's PushKit.
+
+## Installation
+
 cordova plugin add https://github.com/Taracque/cordova-plugin-voippush.git
 
-# API
+## Supported Platforms
+
+* iOS 8.0+
+
+## Usage
+
 ```
-var push = new window.VoipPush();
-push.register(tokenCallback, notificationCallback);
+function initializePushKit() {
+    var push = new window.VoipPush();
+
+    push.register(function onRegistered(data) {
+        console.log('VOIP PushKit registered');
+        console.log(data.token);
+    }, function onNotification(notification) {
+        console.log('VOIP push notification received:');
+        console.log(notification);
+    });
+}
+
 ```
 
-# Example
+The device must be `ready` in order to use the plugin. This sample function (`initializePushKit`) should be executed as following:
+
 ```
-var push = new VoipPush();
+// Cordova app
+document.addEventListener('deviceready', initializePushKit, false);
 
-push.register(function(response) {
+// OR
 
-  console.log("[iOS Push] got registration token: ", response.token);
-  // Save response.token as the device ID to your backend.
-
-}, function(data) {
-
-  console.log("[iOS Push] Received: ", data);
-  
-});
+// Ionic v1 app
+ionic.Platform.ready(initializePushKit);
 ```
