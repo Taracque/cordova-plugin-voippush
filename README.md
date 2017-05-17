@@ -38,4 +38,3 @@ document.addEventListener('deviceready', initializePushKit, false);
 // Ionic v1 app
 ionic.Platform.ready(initializePushKit);
 ```
-
